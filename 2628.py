@@ -11,21 +11,22 @@ for _ in range(n):
         ga.append(lst[1])
     else:
         se.append(lst[1])
-g = sorted(ga)
-s = sorted(se)
-print(g,s)
+
+ga.append(h)
+ga.append(0)
+se.append(w)
+se.append(0)
+
+g = sorted(ga,reverse=True)
+s = sorted(se,reverse=True)
+
 g1 = []
 s1 = []
-while :
-    ansi = w - g1[-1]
+for i in range(len(g)-1):
+    g1.append(g[i]-g[i+1])
+for j in range(len(s)-1):
+    s1.append(s[j]-s[j+1])
+ans = max(g1)*max(s1)
+print(ans)
 
 
-# for i in range(len(g)):
-#     g1.append(w-g[i])
-#     w = w-g[i]
-# for j in range(len(s)):
-#     s1.append(h-s[i])
-#     h = h-s[i]
-
-print(s1,g1)
-print(s1*g1)
